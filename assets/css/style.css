@@ -1198,3 +1198,7 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+.img-fix{
+  width: 100%;
+}
