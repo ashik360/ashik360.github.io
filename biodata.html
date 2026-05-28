@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata - Ashik Ahmed Shuvo</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Outfit', 'sans-serif'],
+                    serif: ['Playfair Display', 'serif']
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    body {
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+    }
+
+    body.bg-pattern {
+        background-color: #f8fafc;
+        background-image:
+            radial-gradient(at 0% 0%, #ccfbf1 0%, transparent 50%),
+            radial-gradient(at 100% 0%, #e0f2fe 0%, transparent 50%),
+            radial-gradient(at 100% 100%, #ecfeff 0%, transparent 50%),
+            radial-gradient(at 0% 100%, #f0fdfa 0%, transparent 50%);
+    }
+
+    main {
+        background: rgba(255,255,255,0.55);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    #contact-sheet {
+        transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity .3s ease;
+    }
+
+    #contact-sheet.translate-y-full {
+        transform: translateY(110%);
+    }
+
+    #galleryModal img {
+        touch-action: pan-y;
+    }
+
+    @media print {
+        .no-print {
+            display: none !important;
+        }
+
+        body {
+            background: white !important;
+        }
+
+        main {
+            box-shadow: none !important;
+            border: none !important;
+        }
+    }
+</style>
+
+</head>
+
+<body class="bg-pattern font-sans min-h-screen py-4 md:py-10 px-3 md:px-4">
+
+<!-- TOP BAR -->
+<header class="no-print max-w-4xl mx-auto mb-6 flex justify-between items-center bg-white/80 backdrop-blur-xl border border-white/50 shadow-md p-4 rounded-2xl">
+
+    <div class="flex items-center gap-2">
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 text-slate-700">
+            Biodata Profile
+        </span>
+
+        <!-- <span class="text-xs text-slate-500 hidden md:block">
+            Biodata Profile
+        </span> -->
+    </div>
+
+    <button onclick="window.print()"
+        class="bg-slate-800 hover:bg-slate-900 text-white text-sm px-4 py-2 rounded-xl transition">
+        Print / Save PDF
+    </button>
+</header>
+
+<!-- MAIN CARD -->
+<main class="max-w-4xl mx-auto border border-white/60 rounded-3xl shadow-2xl overflow-hidden p-6 md:p-12">
+
+    <!-- HERO -->
+    <section class="grid md:grid-cols-12 gap-8 items-center border-b border-slate-200/50 pb-10">
+
+        <!-- IMAGE -->
+        <div class="md:col-span-4 flex justify-center">
+            <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-xl">
+
+                <img
+                    src="./Biodata_files/hero_image.png"
+                    alt="Ashik Ahmed Shuvo"
+                    loading="lazy"
+                    onclick="openGallery(0)"
+                    aria-label="Open image gallery"
+                    class="w-full h-full object-cover object-top cursor-pointer transition duration-300 hover:scale-105"
+                >
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <div class="md:col-span-8 text-center md:text-left">
+
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-slate-800 leading-tight">
+                Ashik Ahmed Shuvo
+            </h1>
+
+            <p class="mt-3 text-slate-600 font-medium flex items-center justify-center md:justify-start gap-2">
+                <span class="text-teal-700">✦</span>
+                IT Executive
+                <span class="text-slate-300">•</span>
+                nSolutions | Mohakhali DOHS
+            </p>
+
+            <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+                <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+                Professional Executive Profile
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAL PROFILE -->
+    <section class="mt-10">
+
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-teal-700 text-white flex items-center justify-center">
+                👤
+            </div>
+
+            <h2 class="font-serif text-2xl font-bold text-slate-800">
+                Personal Profile
+            </h2>
+
+            <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+
+            <div class="profile-row">
+                <span>Full Name</span>
+                <strong>Ashik Ahmed Shuvo</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Gender</span>
+                <strong>Male</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Date of Birth</span>
+                <strong>August 17, 2000</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Age</span>
+                <strong>25</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Place of Birth</span>
+                <strong>Mymensingh</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Height / Weight</span>
+                <strong>5 ft 8 inch / 70 kg</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Religion</span>
+                <strong>Islam</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Blood Group</span>
+                <strong>O+</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="mt-12">
+
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-teal-700 text-white flex items-center justify-center">
+                💼
+            </div>
+
+            <h2 class="font-serif text-2xl font-bold text-slate-800">
+                Education & Professional Life
+            </h2>
+
+            <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+
+            <div class="profile-row sm:col-span-2">
+                <span>Education Degree</span>
+                <strong>BSC in Computer Science & Engineering</strong>
+            </div>
+
+            <div class="profile-row sm:col-span-2">
+                <span>Institute</span>
+                <strong>Bangladesh Open University</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Company</span>
+                <strong>nSolutions</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Designation</span>
+                <strong>IT Executive</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Job Type</span>
+                <strong>Full Time</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Location</span>
+                <strong>Mohakhali DOHS, Dhaka</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAMILY -->
+    <section class="mt-12">
+
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-teal-700 text-white flex items-center justify-center">
+                🏡
+            </div>
+
+            <h2 class="font-serif text-2xl font-bold text-slate-800">
+                Family Background
+            </h2>
+
+            <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+
+            <div class="profile-row">
+                <span>Father's Name</span>
+                <strong>Md Asraful Alam</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Occupation</span>
+                <strong>Retired Army Officer</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Mother's Name</span>
+                <strong>Sheuli Ashraf</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Occupation</span>
+                <strong>Housewife</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Brothers/Sisters</span>
+                <strong>1 Brother</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Family Status</span>
+                <strong>Middle Class</strong>
+            </div>
+
+            <div class="profile-row sm:col-span-2">
+                <span>Permanent Address</span>
+                <strong>Charmaslanda, Gafargaon, Mymensingh</strong>
+            </div>
+
+            <div class="profile-row sm:col-span-2">
+                <span>Current Residence</span>
+                <strong>Akua Wireless Road, Sadar, Mymensingh</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center">
+        <!-- <p class="text-slate-500 text-sm">
+            Crafted with professionalism & simplicity
+        </p> -->
+
+        <p class="mt-2 text-xs tracking-[0.3em] text-slate-400 uppercase">
+            @ashik360
+        </p>
+    </footer>
+</main>
+
+<!-- FLOATING BUTTON -->
+<div class="no-print fixed bottom-6 right-6 z-50">
+
+    <button onclick="toggleContactSheet(true)"
+        class="bg-teal-700 hover:bg-teal-800 text-white px-5 py-3 rounded-full shadow-2xl transition flex items-center gap-2">
+
+        <span>💬</span>
+        Quick Contact
+    </button>
+</div>
+
+<!-- OVERLAY -->
+<div id="contact-overlay"
+    onclick="toggleContactSheet(false)"
+    class="no-print fixed inset-0 bg-black/40 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition duration-300">
+</div>
+
+<!-- CONTACT SHEET -->
+<div id="contact-sheet"
+    class="no-print fixed bottom-0 left-0 right-0 max-w-xl mx-auto bg-white rounded-t-3xl shadow-2xl z-50 p-6 translate-y-full">
+
+    <div class="w-14 h-1 bg-slate-300 rounded-full mx-auto mb-6"></div>
+
+    <div class="flex justify-between items-center mb-5">
+
+        <div>
+            <h3 class="font-serif text-2xl font-bold text-slate-800">
+                Quick Connect
+            </h3>
+
+            <p class="text-sm text-slate-500">
+                Contact directly
+            </p>
+        </div>
+
+        <button onclick="toggleContactSheet(false)"
+            class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200">
+            ✕
+        </button>
+    </div>
+
+    <div class="space-y-3">
+
+        <a href="tel:01755823861"
+            class="contact-card">
+            <div>
+                <p class="label">Direct Phone</p>
+                <p class="value">01755823861</p>
+            </div>
+
+            <span class="badge">Call</span>
+        </a>
+
+        <a href="https://wa.me/8801755823861"
+            target="_blank"
+            class="contact-card">
+
+            <div>
+                <p class="label">WhatsApp</p>
+                <p class="value">+88 01755823861</p>
+            </div>
+
+            <span class="badge">Chat</span>
+        </a>
+
+        <a href="mailto:ashik4745@gmail.com"
+            class="contact-card">
+
+            <div>
+                <p class="label">Email</p>
+                <p class="value">ashik4745@gmail.com</p>
+            </div>
+
+            <span class="badge">Mail</span>
+        </a>
+    </div>
+</div>
+
+<!-- GALLERY -->
+<div id="galleryModal"
+    class="fixed inset-0 bg-black/95 z-[999] hidden items-center justify-center">
+
+    <!-- CLOSE -->
+    <button onclick="closeGallery()"
+        class="absolute top-5 right-5 text-white text-4xl z-50">
+        ✕
+    </button>
+
+    <!-- PREV -->
+    <button onclick="changeSlide(-1)"
+        class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl backdrop-blur">
+        ❮
+    </button>
+
+    <!-- NEXT -->
+    <button onclick="changeSlide(1)"
+        class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl backdrop-blur">
+        ❯
+    </button>
+
+    <!-- MAIN IMAGE -->
+    <img id="galleryImage"
+        class="max-w-[95vw] max-h-[92vh] object-contain rounded-2xl shadow-2xl">
+
+    <!-- THUMBNAILS -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto px-2 max-w-[95vw]">
+
+        <img src="./Biodata_files/hero_image.png"
+            onclick="setSlide(0)"
+            class="w-16 h-16 object-cover rounded-xl border-2 border-white cursor-pointer">
+
+        <!-- ADD MORE IMAGES LIKE THIS -->
+        
+        <img src="./Biodata_files/hero_image_2.png"
+            onclick="setSlide(1)"
+            class="w-16 h-16 object-cover rounded-xl border-2 border-white cursor-pointer">
+       
+        <img src="./Biodata_files/hero_image_3.png"
+            onclick="setSlide(2)"
+            class="w-16 h-16 object-cover rounded-xl border-2 border-white cursor-pointer">
+       
+        <img src="./Biodata_files/hero_image_4.png"
+            onclick="setSlide(3)"
+            class="w-16 h-16 object-cover rounded-xl border-2 border-white cursor-pointer">
+       
+    </div>
+</div>
+
+<!-- REUSABLE CLASSES -->
+<style>
+    .profile-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: .85rem 0;
+        border-bottom: 1px dashed rgba(148,163,184,.35);
+        font-size: .95rem;
+    }
+
+    .profile-row span {
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    .profile-row strong {
+        color: #0f172a;
+        text-align: right;
+    }
+
+    .contact-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        transition: .2s;
+    }
+
+    .contact-card:hover {
+        background: #f1f5f9;
+    }
+
+    .label {
+        font-size: .75rem;
+        color: #64748b;
+    }
+
+    .value {
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: .15rem;
+    }
+
+    .badge {
+        background: #0f766e;
+        color: white;
+        font-size: .75rem;
+        font-weight: 600;
+        padding: .4rem .8rem;
+        border-radius: .7rem;
+    }
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // CONTACT SHEET
+
+    const overlay = document.getElementById('contact-overlay');
+    const sheet = document.getElementById('contact-sheet');
+
+    function toggleContactSheet(isOpen) {
+
+        overlay.classList.toggle('pointer-events-none', !isOpen);
+        overlay.classList.toggle('opacity-0', !isOpen);
+        overlay.classList.toggle('opacity-100', isOpen);
+
+        sheet.classList.toggle('translate-y-full', !isOpen);
+    }
+
+    // IMAGE GALLERY
+
+    const galleryImages = [
+        "./Biodata_files/hero_image.png",
+        "./Biodata_files/hero_image_2.png",
+        "./Biodata_files/hero_image_3.png",
+        "./Biodata_files/hero_image_4.png"
+    ];
+
+    let currentSlide = 0;
+
+    const galleryModal = document.getElementById('galleryModal');
+    const galleryImage = document.getElementById('galleryImage');
+
+    function openGallery(index = 0) {
+
+        currentSlide = index;
+
+        galleryModal.classList.remove('hidden');
+        galleryModal.classList.add('flex');
+
+        updateGallery();
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+
+        galleryModal.classList.add('hidden');
+        galleryModal.classList.remove('flex');
+
+        document.body.style.overflow = '';
+    }
+
+    function updateGallery() {
+        galleryImage.src = galleryImages[currentSlide];
+    }
+
+    function changeSlide(direction) {
+
+        currentSlide =
+            (currentSlide + direction + galleryImages.length)
+            % galleryImages.length;
+
+        updateGallery();
+    }
+
+    function setSlide(index) {
+        currentSlide = index;
+        updateGallery();
+    }
+
+    // KEYBOARD SUPPORT
+
+    document.addEventListener('keydown', (e) => {
+
+        if (galleryModal.classList.contains('hidden')) return;
+
+        if (e.key === 'Escape') closeGallery();
+
+        if (e.key === 'ArrowRight') changeSlide(1);
+
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+
+    // CLOSE WHEN CLICK OUTSIDE
+
+    galleryModal.addEventListener('click', (e) => {
+
+        if (e.target === galleryModal) {
+            closeGallery();
+        }
+    });
+
+</script>
+
+</body>
+</html>
